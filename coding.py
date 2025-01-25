@@ -20,7 +20,8 @@ def buildArray2(nums):
         nums[i] //= n
     
     return nums
-print(buildArray2([0,2,1,5,3,4])) # [0,1,2,4,5,3]
+
+
 
 
 # 13. Roman to Integer
@@ -36,7 +37,6 @@ def romanToInt(s):
 
     return res
 
-print(romanToInt('III')) # 3
 
 
 # 15. 3Sum
@@ -91,9 +91,12 @@ def threeSum(nums):
     return res
             
             
-            
-            
-            
-print(threeSum([0,0,0,0])) # [[0,0,0]]
-print(threeSum([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
-        
+
+if __name__ == '__main__':
+    print('test')
+    print(buildArray2([0,2,1,5,3,4])) # [0,1,2,4,5,3]
+    print(romanToInt('III')) # 3
+    print(threeSum([0,0,0,0])) # [[0,0,0]]
+    print(threeSum([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
+    print(threeSum2([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
+    print(threeSum2([0,0,0,0])) # [[0,0,0]]
