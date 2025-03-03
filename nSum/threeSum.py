@@ -39,7 +39,34 @@ def threeSum2(nums):
                 
     return res
 
-if __name__== "__main__":
-    print(threeSum([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
-    print(threeSum2([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
+print(threeSum([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
+print(threeSum2([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
     #[-4,-1,-1,0,1,2]
+    
+    
+    
+def threeSum3(nums):
+    res = []
+    n = len(nums)
+    nums.sort()
+    
+    for first in range(n):
+        if first > 0 and nums[first] == nums[first - 1]:
+            continue
+        
+        third = n - 1
+        for second in range(first + 1, n -1):
+            if second > first + 1 and nums[second] == nums[second - 1]:
+                continue
+            
+            while second < third and nums[first] + nums[second] + nums[third] > 0:
+                third -= 1
+                
+            if second != third and nums[first] + nums[second] + nums[third] == 0:
+                res.append([nums[first], nums[second], nums[third]])
+                
+    
+    return res
+
+print(threeSum3([-1,0,1,2,-1,-4])) # [[-1,-1,2],[-1,0,1]]
+                

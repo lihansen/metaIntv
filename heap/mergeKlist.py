@@ -46,6 +46,28 @@ class Solution:
         return dummy.next
 
 
+def mergeKLists(lists):
+    heap = []
+    dummy = ListNode()
+    p = dummy
+    
+    for node in lists:
+        if node:
+            heap.append(Node(node))
+    
+    heapq.heapify(heap)
+    
+    while heap:
+        top = heapq.heappop(heap).node
+        p.next = top
+        p = p.next
+        if top.next:
+            heapq.heappush(heap, Node(top.next))
+            
+    return dummy.next
+
+
+
 # create a linklist
 '''
 [
@@ -72,5 +94,6 @@ node_list = [
 ]
 
 sol = Solution()
-res = sol.mergeKLists(node_list)
+# res = sol.mergeKLists(node_list)
+res = mergeKLists(node_list)
 print(res)
