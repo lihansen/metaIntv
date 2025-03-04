@@ -13,7 +13,7 @@ class ListNode():
         return " ".join(res)
 
 
-def deleteDuplicate(head):
+def deleteDuplicate2(head):
     slow = head
     fast = head
 
@@ -26,6 +26,17 @@ def deleteDuplicate(head):
 
     slow.next = None
 
+    return head
+
+def deleteDuplicate(head):
+    p = head
+    
+    while p and p.next:
+        if p.val == p.next.val:
+            p.next = p.next.next
+        else:
+            p = p.next
+            
     return head
 
 
